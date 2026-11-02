@@ -1,0 +1,33 @@
+severity = "Warning"
+exclude = [
+    "node_modules/**",
+    ".git/**",
+]
+target = "ClaudeCode"
+tools = []
+locale = "en"
+
+[rules]
+skills = true
+hooks = true
+agents = true
+memory = true
+plugins = true
+xml = true
+mcp = true
+imports = true
+cross_platform = false # Intentional - state dir uses AI_STATE_DIR env var with .claude fallback
+agents_md = true
+prompt_engineering = true
+generic_instructions = true
+frontmatter_validation = true
+xml_balance = true
+import_references = true
+disabled_rules = [
+    "CDX-AG-002",  # False positive - "tokens" in "Save tokens over decorations" is not a secret
+    "CC-SK-017",   # Intentional - version and argument-hint are client-specific frontmatter fields
+]
+
+[tool_versions]
+
+[spec_revisions]
